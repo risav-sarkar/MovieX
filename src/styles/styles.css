@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Nunito";
+  color: white;
+  background-color: #141414;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+.header {
+  padding: 30px 20px;
+  background-color: black;
+}
+
+.homeContainer {
+  padding: 0 20px;
+}
+
+.homeContainer .heroSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  margin: 20px auto;
+  max-width: 1100px;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 550px;
+  background-color: black;
+}
+
+.homeContainer .heroSection img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.homeContainer .heroSection .heroText {
+  background-color: rgba(0, 0, 0, 0.61);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  border-radius: 10px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 40px;
+  max-width: 500px;
+}
+
+.homeContainer .heroSection .heroText h1 {
+  font-size: 60px;
+}
+
+@media (max-width: 768px) {
+  .homeContainer .heroSection .heroText {
+    padding: 20px;
+    width: 100%;
+  }
+  .homeContainer .heroSection .heroText h1 {
+    font-size: 45px;
+  }
+}
+
+.grid {
+  margin: 0 auto;
+  max-width: 1100px;
+  padding: 40px 0;
+}
+
+.grid h1 {
+  margin-bottom: 20px;
+}
+
+.grid .gridContents {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(167px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(167px, 1fr));
+  grid-gap: 20px;
+}
+
+.grid .gridContents .thumb img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.grid .gridContents .thumb .textContainer p {
+  margin-top: 5px;
+  font-size: 13px;
+}
+
+.grid .gridContents .thumb .textContainer h1 {
+  margin-top: 5px;
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  .grid .gridContents .thumb .textContainer h1 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  .grid .gridContents {
+    -ms-grid-columns: (minmax(165px, 1fr))[auto-fill];
+        grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+  }
+}
