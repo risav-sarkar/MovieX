@@ -6,6 +6,7 @@ import Thumbnails from "./thumbnails";
 
 const Home = () => {
   const monthName = [
+    "",
     "Jan",
     "Feb",
     "Mar",
