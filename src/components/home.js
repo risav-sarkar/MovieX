@@ -14,6 +14,7 @@ const Home = () => {
         <HeroImage
           image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${state.results[0].backdrop_path}`}
           title={state.results[0].original_title}
+          desc={state.results[0].overview}
         />
       ) : null}
       <Grid header="Recent Movies">

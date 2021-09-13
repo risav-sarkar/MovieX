@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap");
 $text_white: white;
+$text_grey: white;
+$background1: black;
+$background2: rgb(20, 20, 20);
 $max_width: 1100px;
+
 * {
   margin: 0;
   padding: 0;
@@ -15,7 +19,7 @@ body {
   width: 100%;
   font-family: "Nunito";
   color: $text_white;
-  background-color: rgb(20, 20, 20);
+  background-color: $background2;
 }
 #root {
   height: 100%;
@@ -23,47 +27,38 @@ body {
 }
 .header {
   padding: 30px 20px;
-  background-color: black;
+  background-color: $background1;
 }
 
 .homeContainer {
   padding: 0 20px;
   .heroSection {
+    position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative;
     margin: 20px auto;
     max-width: $max_width;
     border-radius: 20px;
     overflow: hidden;
-    height: 550px;
-    background-color: black;
     img {
-      object-fit: contain;
-      height: 100%;
-      margin: 0 auto;
+      height: 550px;
+      width: 100%;
+      object-fit: cover;
     }
     .heroText {
       h1 {
         font-size: 60px;
       }
-      background-color: rgba(0, 0, 0, 0.61);
-
-      backdrop-filter: blur(2px);
-      border-radius: 10px;
-      position: absolute;
-      left: 0;
-      bottom: 0;
+      background-color: $background1;
       padding: 40px;
-      max-width: 500px;
     }
-    @media (max-width: 768px) {
+    @media (max-width: 800px) {
       .heroText {
         padding: 20px;
-        width: 100%;
         h1 {
-          font-size: 45px;
+          font-size: 40px;
         }
       }
     }
