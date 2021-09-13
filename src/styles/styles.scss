@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap");
 $text_white: white;
-$text_grey: white;
+$text_grey: rgb(218, 218, 218);
 $background1: black;
 $background2: rgb(20, 20, 20);
 $max_width: 1100px;
@@ -28,6 +28,13 @@ body {
 .header {
   padding: 30px 20px;
   background-color: $background1;
+  .headerContents {
+    margin: 0 auto;
+    max-width: $max_width;
+    h1 {
+      font-size: 45px;
+    }
+  }
 }
 
 .homeContainer {
@@ -86,15 +93,16 @@ body {
       .textContainer {
         p {
           margin-top: 5px;
-          font-size: 13px;
+          font-size: 14px;
+          color: $text_grey;
         }
         h1 {
-          margin-top: 5px;
+          margin-top: 2px;
           font-size: 18px;
         }
         @media (max-width: 768px) {
           h1 {
-            font-size: 20px;
+            font-size: 22px;
           }
         }
       }

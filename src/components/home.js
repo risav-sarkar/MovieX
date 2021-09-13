@@ -5,6 +5,20 @@ import Grid from "./grid";
 import Thumbnails from "./thumbnails";
 
 const Home = () => {
+  const monthName = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
   // eslint-disable-next-line
   const { state, loading, error } = useHomeFetch();
   console.log(state);
@@ -25,7 +39,17 @@ const Home = () => {
             image={IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path}
             movieId={movie.id}
             title={movie.original_title}
-            date={movie.release_date.substring(0, 4)}
+            date={`${
+              parseInt(movie.release_date.substring(8)) === 1
+                ? `${parseInt(movie.release_date.substring(8))}st`
+                : parseInt(movie.release_date.substring(8)) === 2
+                ? `${parseInt(movie.release_date.substring(8))}nd`
+                : parseInt(movie.release_date.substring(8)) === 3
+                ? `${parseInt(movie.release_date.substring(8))}rd`
+                : `${parseInt(movie.release_date.substring(8))}th`
+            }, ${
+              monthName[parseInt(movie.release_date.substring(5, 7))]
+            }, ${movie.release_date.substring(0, 4)}`}
           />
         ))}
       </Grid>
