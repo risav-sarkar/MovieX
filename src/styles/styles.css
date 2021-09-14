@@ -24,6 +24,39 @@ body {
   width: 100%;
 }
 
+.spinner {
+  border: 5px solid #dadada;
+  border-top: 5px solid black;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spin 0.8s linear infinite;
+          animation: spin 0.8s linear infinite;
+  margin: 20px auto;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 .header {
   padding: 30px 20px;
   background-color: black;
@@ -39,7 +72,7 @@ body {
 }
 
 .homeContainer {
-  padding: 0 20px;
+  padding: 0 20px 20px 20px;
 }
 
 .homeContainer .heroSection {
@@ -100,7 +133,7 @@ body {
 .grid {
   margin: 0 auto;
   max-width: 1100px;
-  padding: 40px 0;
+  padding: 40px 0 0 0;
 }
 
 .grid h1 {
@@ -123,15 +156,15 @@ body {
   overflow: hidden;
 }
 
-.grid .gridContents .thumb .textContainer p {
-  margin-top: 5px;
-  font-size: 14px;
-  color: #dadada;
+.grid .gridContents .thumb .textContainer h1 {
+  font-size: 18px;
+  margin: 2px 0 0 0;
 }
 
-.grid .gridContents .thumb .textContainer h1 {
+.grid .gridContents .thumb .textContainer p {
   margin-top: 2px;
-  font-size: 18px;
+  font-size: 14px;
+  color: #dadada;
 }
 
 @media (max-width: 768px) {
