@@ -10,6 +10,8 @@ const initialState = {
 
 export const useHomeFetch = () => {
   const [state, setState] = useState(initialState);
+  const [state1, setState1] = useState(initialState);
+  const [state2, setState2] = useState(initialState);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
@@ -29,9 +31,43 @@ export const useHomeFetch = () => {
     setLoading(false);
   };
 
+  const fetchNowMovies = async (page) => {
+    try {
+      setError(false);
+      setLoading(true);
+      const movies = await API.fetchNowMovies(page);
+      setState1((prev) => ({
+        ...movies,
+        results:
+          page > 1 ? [...prev.results, ...movies.results] : [...movies.results],
+      }));
+    } catch {
+      setError(true);
+    }
+    setLoading(false);
+  };
+
+  const fetchUpcomingMovies = async (page) => {
+    try {
+      setError(false);
+      setLoading(true);
+      const movies = await API.fetchUpcomingMovies(page);
+      setState2((prev) => ({
+        ...movies,
+        results:
+          page > 1 ? [...prev.results, ...movies.results] : [...movies.results],
+      }));
+    } catch {
+      setError(true);
+    }
+    setLoading(false);
+  };
+
   useEffect(() => {
     fetchMovies(1);
+    fetchNowMovies(1);
+    fetchUpcomingMovies(1);
   }, []);
 
-  return { state, loading, error };
+  return { state, state1, state2, loading, error };
 };

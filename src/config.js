@@ -5,7 +5,9 @@ const API_URL = "https://api.themoviedb.org/3/";
 const API_KEY = process.env.REACT_APP_API_KEY;
 
 const SEARCH_BASE_URL = `${API_URL}search/movie?api_key=${API_KEY}&language=en-US&query=`;
-const POPULAR_BASE_URL = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US`;
+const POPULAR_BASE_URL = `${API_URL}movie/popular?api_key=${API_KEY}&language=en&region=US`;
+const NOW_PLAYING_BASE_URL = `${API_URL}movie/now_playing?api_key=${API_KEY}&language=en&region=US`;
+const UPCOMING_BASE_URL = `${API_URL}movie/upcoming?api_key=${API_KEY}&language=en&region=US`;
 
 const IMAGE_BASE_URL = "http://image.tmdb.org/t/p/";
 // Sizes: w300, w780, w1280, original
@@ -16,6 +18,8 @@ const POSTER_SIZE = "w780";
 export {
   SEARCH_BASE_URL,
   POPULAR_BASE_URL,
+  NOW_PLAYING_BASE_URL,
+  UPCOMING_BASE_URL,
   API_URL,
   API_KEY,
   IMAGE_BASE_URL,

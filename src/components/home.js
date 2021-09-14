@@ -23,8 +23,9 @@ const Home = () => {
     "Dec",
   ];
   // eslint-disable-next-line
-  const { state, loading, error } = useHomeFetch();
+  const { state, state1, state2, loading, error } = useHomeFetch();
   console.log(state);
+  console.log(state1);
   return (
     <>
       <Header />
@@ -36,6 +37,52 @@ const Home = () => {
             desc={state.results[0].overview}
           />
         ) : null}
+        <Grid header="Now Playing">
+          {state1.results.map((movie) => (
+            <Thumbnails
+              key={movie.id}
+              clickable
+              image={IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path}
+              movieId={movie.id}
+              title={movie.original_title}
+              date={`${
+                monthName[parseInt(movie.release_date.substring(5, 7))]
+              } ${
+                parseInt(movie.release_date.substring(8)) === 1
+                  ? `${parseInt(movie.release_date.substring(8))}st`
+                  : parseInt(movie.release_date.substring(8)) === 2
+                  ? `${parseInt(movie.release_date.substring(8))}nd`
+                  : parseInt(movie.release_date.substring(8)) === 3
+                  ? `${parseInt(movie.release_date.substring(8))}rd`
+                  : `${parseInt(movie.release_date.substring(8))}th`
+              }, ${movie.release_date.substring(0, 4)}`}
+            />
+          ))}
+          <Spinner />
+        </Grid>
+        <Grid header="Upcoming">
+          {state2.results.map((movie) => (
+            <Thumbnails
+              key={movie.id}
+              clickable
+              image={IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path}
+              movieId={movie.id}
+              title={movie.original_title}
+              date={`${
+                monthName[parseInt(movie.release_date.substring(5, 7))]
+              } ${
+                parseInt(movie.release_date.substring(8)) === 1
+                  ? `${parseInt(movie.release_date.substring(8))}st`
+                  : parseInt(movie.release_date.substring(8)) === 2
+                  ? `${parseInt(movie.release_date.substring(8))}nd`
+                  : parseInt(movie.release_date.substring(8)) === 3
+                  ? `${parseInt(movie.release_date.substring(8))}rd`
+                  : `${parseInt(movie.release_date.substring(8))}th`
+              }, ${movie.release_date.substring(0, 4)}`}
+            />
+          ))}
+          <Spinner />
+        </Grid>
         <Grid header="Popular Movies">
           {state.results.map((movie) => (
             <Thumbnails

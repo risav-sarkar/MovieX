@@ -1,10 +1,25 @@
-import { SEARCH_BASE_URL, POPULAR_BASE_URL, API_URL, API_KEY } from "./config";
+import {
+  SEARCH_BASE_URL,
+  POPULAR_BASE_URL,
+  NOW_PLAYING_BASE_URL,
+  UPCOMING_BASE_URL,
+  API_URL,
+  API_KEY,
+} from "./config";
 
 const apiSettings = {
   fetchMovies: async (searchTerm, page) => {
     const endpoint = searchTerm
       ? `${SEARCH_BASE_URL}${searchTerm}&page=${page}`
       : `${POPULAR_BASE_URL}&page=${page}`;
+    return await (await fetch(endpoint)).json();
+  },
+  fetchNowMovies: async (page) => {
+    const endpoint = `${NOW_PLAYING_BASE_URL}&page=${page}`;
+    return await (await fetch(endpoint)).json();
+  },
+  fetchUpcomingMovies: async (page) => {
+    const endpoint = `${UPCOMING_BASE_URL}&page=${page}`;
     return await (await fetch(endpoint)).json();
   },
   fetchMovie: async (movieId) => {
