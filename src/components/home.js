@@ -36,7 +36,7 @@ const Home = () => {
             desc={state.results[0].overview}
           />
         ) : null}
-        <Grid header="Recent Movies">
+        <Grid header="Popular Movies">
           {state.results.map((movie) => (
             <Thumbnails
               key={movie.id}
@@ -57,8 +57,8 @@ const Home = () => {
               }, ${movie.release_date.substring(0, 4)}`}
             />
           ))}
+          <Spinner />
         </Grid>
-        <Spinner />
       </div>
     </>
   );
