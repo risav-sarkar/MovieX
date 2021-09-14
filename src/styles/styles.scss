@@ -49,6 +49,19 @@ body {
     max-width: $max_width;
     border-radius: 20px;
     overflow: hidden;
+    .blur {
+      position: absolute;
+      top: 510px;
+      width: 100%;
+      height: 50px;
+      background-image: linear-gradient(
+        to top,
+        rgb(0, 0, 0),
+        rgb(0, 0, 0),
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0)
+      );
+    }
     img {
       height: 550px;
       width: 100%;
@@ -59,11 +72,11 @@ body {
         font-size: 60px;
       }
       background-color: $background1;
-      padding: 40px;
+      padding: 0 40px 40px 40px;
     }
     @media (max-width: 800px) {
       .heroText {
-        padding: 20px;
+        padding: 0 20px 20px 20px;
         h1 {
           font-size: 40px;
         }
@@ -102,7 +115,7 @@ body {
         }
         @media (max-width: 768px) {
           h1 {
-            font-size: 22px;
+            font-size: 20px;
           }
         }
       }
