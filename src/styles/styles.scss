@@ -109,12 +109,14 @@ body {
 }
 
 .grid {
+  padding-top: 20px;
   margin: 0 auto;
   max-width: $max_width;
   h1 {
     margin-bottom: 20px;
   }
   .gridContents {
+    padding-bottom: 20px;
     position: relative;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -155,5 +157,18 @@ body {
   }
   .gridContents {
     overflow: -moz-scrollbars-none;
+  }
+  @media (min-width: 800px) {
+    .gridContents::-webkit-scrollbar {
+      height: 10px;
+      max-width: 20px;
+    }
+    .gridContents::-webkit-scrollbar-thumb {
+      background-color: $text_white;
+      border-radius: 25px;
+    }
+    .gridContents::-webkit-scrollbar-thumb:hover {
+      background: $text_grey;
+    }
   }
 }

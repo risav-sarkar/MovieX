@@ -132,6 +132,7 @@ body {
 }
 
 .grid {
+  padding-top: 20px;
   margin: 0 auto;
   max-width: 1300px;
 }
@@ -141,6 +142,7 @@ body {
 }
 
 .grid .gridContents {
+  padding-bottom: 20px;
   position: relative;
   display: -ms-grid;
   display: grid;
@@ -187,4 +189,18 @@ body {
 
 .grid .gridContents {
   overflow: -moz-scrollbars-none;
+}
+
+@media (min-width: 800px) {
+  .grid .gridContents::-webkit-scrollbar {
+    height: 10px;
+    max-width: 20px;
+  }
+  .grid .gridContents::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 25px;
+  }
+  .grid .gridContents::-webkit-scrollbar-thumb:hover {
+    background: #dadada;
+  }
 }
