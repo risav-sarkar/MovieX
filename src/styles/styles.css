@@ -131,17 +131,17 @@ body {
   }
 }
 
-.grid {
+.homeContainer .homeGrid .grid {
   padding-top: 20px;
   margin: 0 auto;
   max-width: 1300px;
 }
 
-.grid h1 {
+.homeContainer .homeGrid .grid h1 {
   margin-bottom: 20px;
 }
 
-.grid .gridContents {
+.homeContainer .homeGrid .grid .gridContents {
   padding-bottom: 20px;
   position: relative;
   display: -ms-grid;
@@ -154,11 +154,11 @@ body {
   grid-gap: 20px;
 }
 
-.grid .gridContents .gridBlur {
+.homeContainer .homeGrid .grid .gridContents .gridBlur {
   position: absolute;
 }
 
-.grid .gridContents .thumb img {
+.homeContainer .homeGrid .grid .gridContents .thumb img {
   -o-object-fit: contain;
      object-fit: contain;
   width: 100%;
@@ -166,41 +166,90 @@ body {
   overflow: hidden;
 }
 
-.grid .gridContents .thumb .textContainer h1 {
+.homeContainer .homeGrid .grid .gridContents .thumb .textContainer h1 {
   font-size: 18px;
   margin: 2px 0 0 0;
 }
 
-.grid .gridContents .thumb .textContainer p {
+.homeContainer .homeGrid .grid .gridContents .thumb .textContainer p {
   margin-top: 2px;
   font-size: 14px;
   color: #dadada;
 }
 
 @media (max-width: 768px) {
-  .grid .gridContents .thumb .textContainer h1 {
+  .homeContainer .homeGrid .grid .gridContents .thumb .textContainer h1 {
     font-size: 20px;
   }
 }
 
-.grid .gridContents::-webkit-scrollbar {
+.homeContainer .homeGrid .grid .gridContents::-webkit-scrollbar {
   width: 0 !important;
 }
 
-.grid .gridContents {
+.homeContainer .homeGrid .grid .gridContents {
   overflow: -moz-scrollbars-none;
 }
 
 @media (min-width: 800px) {
-  .grid .gridContents::-webkit-scrollbar {
+  .homeContainer .homeGrid .grid .gridContents::-webkit-scrollbar {
     height: 10px;
     max-width: 20px;
   }
-  .grid .gridContents::-webkit-scrollbar-thumb {
+  .homeContainer .homeGrid .grid .gridContents::-webkit-scrollbar-thumb {
     background-color: white;
     border-radius: 25px;
   }
-  .grid .gridContents::-webkit-scrollbar-thumb:hover {
+  .homeContainer .homeGrid .grid .gridContents::-webkit-scrollbar-thumb:hover {
     background: #dadada;
+  }
+}
+
+.homeContainer .searchGrid .grid {
+  padding-top: 20px;
+  margin: 0 auto;
+  max-width: 1300px;
+}
+
+.homeContainer .searchGrid .grid h1 {
+  margin-bottom: 20px;
+}
+
+.homeContainer .searchGrid .grid .gridContents {
+  padding-bottom: 20px;
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(240px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-gap: 20px;
+}
+
+.homeContainer .searchGrid .grid .gridContents .gridBlur {
+  position: absolute;
+}
+
+.homeContainer .searchGrid .grid .gridContents .thumb img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.homeContainer .searchGrid .grid .gridContents .thumb .textContainer h1 {
+  font-size: 18px;
+  margin: 2px 0 0 0;
+}
+
+.homeContainer .searchGrid .grid .gridContents .thumb .textContainer p {
+  margin-top: 2px;
+  font-size: 14px;
+  color: #dadada;
+}
+
+@media (max-width: 768px) {
+  .homeContainer .searchGrid .grid .gridContents .thumb .textContainer h1 {
+    font-size: 20px;
   }
 }

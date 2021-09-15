@@ -106,69 +106,116 @@ body {
       }
     }
   }
-}
 
-.grid {
-  padding-top: 20px;
-  margin: 0 auto;
-  max-width: $max_width;
-  h1 {
-    margin-bottom: 20px;
-  }
-  .gridContents {
-    padding-bottom: 20px;
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-auto-flow: column;
-    grid-auto-columns: minmax(200px, 1fr);
-    overflow-x: scroll;
-    grid-gap: 20px;
-    .gridBlur {
-      position: absolute;
-    }
-    .thumb {
-      img {
-        object-fit: contain;
-        width: 100%;
-        border-radius: 20px;
-        overflow: hidden;
+  .homeGrid {
+    .grid {
+      padding-top: 20px;
+      margin: 0 auto;
+      max-width: $max_width;
+      h1 {
+        margin-bottom: 20px;
       }
-      .textContainer {
-        h1 {
-          font-size: 18px;
-          margin: 2px 0 0 0;
+      .gridContents {
+        padding-bottom: 20px;
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(200px, 1fr);
+        overflow-x: scroll;
+        grid-gap: 20px;
+        .gridBlur {
+          position: absolute;
         }
-        p {
-          margin-top: 2px;
-          font-size: 14px;
-          color: $text_grey;
-        }
-        @media (max-width: 768px) {
-          h1 {
-            font-size: 20px;
+        .thumb {
+          img {
+            object-fit: contain;
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+          }
+          .textContainer {
+            h1 {
+              font-size: 18px;
+              margin: 2px 0 0 0;
+            }
+            p {
+              margin-top: 2px;
+              font-size: 14px;
+              color: $text_grey;
+            }
+            @media (max-width: 768px) {
+              h1 {
+                font-size: 20px;
+              }
+            }
           }
         }
       }
+      .gridContents::-webkit-scrollbar {
+        width: 0 !important;
+      }
+      .gridContents {
+        overflow: -moz-scrollbars-none;
+      }
+      @media (min-width: 800px) {
+        .gridContents::-webkit-scrollbar {
+          height: 10px;
+          max-width: 20px;
+        }
+        .gridContents::-webkit-scrollbar-thumb {
+          background-color: $text_white;
+          border-radius: 25px;
+        }
+        .gridContents::-webkit-scrollbar-thumb:hover {
+          background: $text_grey;
+        }
+      }
     }
   }
-  .gridContents::-webkit-scrollbar {
-    width: 0 !important;
-  }
-  .gridContents {
-    overflow: -moz-scrollbars-none;
-  }
-  @media (min-width: 800px) {
-    .gridContents::-webkit-scrollbar {
-      height: 10px;
-      max-width: 20px;
-    }
-    .gridContents::-webkit-scrollbar-thumb {
-      background-color: $text_white;
-      border-radius: 25px;
-    }
-    .gridContents::-webkit-scrollbar-thumb:hover {
-      background: $text_grey;
+
+  .searchGrid {
+    .grid {
+      padding-top: 20px;
+      margin: 0 auto;
+      max-width: $max_width;
+      h1 {
+        margin-bottom: 20px;
+      }
+      .gridContents {
+        padding-bottom: 20px;
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        grid-gap: 20px;
+        .gridBlur {
+          position: absolute;
+        }
+        .thumb {
+          img {
+            object-fit: contain;
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+          }
+          .textContainer {
+            h1 {
+              font-size: 18px;
+              margin: 2px 0 0 0;
+            }
+            p {
+              margin-top: 2px;
+              font-size: 14px;
+              color: $text_grey;
+            }
+            @media (max-width: 768px) {
+              h1 {
+                font-size: 20px;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
