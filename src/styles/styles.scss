@@ -74,6 +74,7 @@ body {
   }
   .heroText {
     position: absolute;
+    max-width: $max_width;
     bottom: 80px;
     h1 {
       font-size: 60px;

@@ -99,6 +99,7 @@ body {
 
 .heroSection .heroText {
   position: absolute;
+  max-width: 1300px;
   bottom: 80px;
   padding: 0 20px;
 }
