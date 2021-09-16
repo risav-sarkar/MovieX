@@ -91,7 +91,7 @@ body {
 }
 
 .heroSection img {
-  height: 600px;
+  height: 80vh;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
