@@ -2,7 +2,6 @@ const HeroImage = ({ image, title, desc }) => {
   return (
     <div className="heroSection">
       <img src={image} alt="recentMovie" />
-      <div className="blur"></div>
       <div className="heroText">
         <h1>{title}</h1>
         <p>{desc}</p>

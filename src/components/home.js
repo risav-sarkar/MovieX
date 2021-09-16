@@ -7,21 +7,6 @@ import Thumbnails from "./thumbnails";
 import Searchbar from "./homeComponents/searchbar";
 
 const Home = () => {
-  const monthName = [
-    "",
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
   // eslint-disable-next-line
   const { state, state1, state2, loading, error, searchTerm, setSearchTerm } =
     useHomeFetch();
@@ -31,9 +16,9 @@ const Home = () => {
     <>
       {state.results[0] ? (
         <HeroImage
-          image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${state.results[1].backdrop_path}`}
-          title={state.results[1].original_title}
-          desc={state.results[1].overview}
+          image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${state.results[0].backdrop_path}`}
+          title={state.results[0].original_title}
+          desc={state.results[0].overview}
         />
       ) : null}
       {!searchTerm ? (
@@ -50,17 +35,7 @@ const Home = () => {
                     image={IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path}
                     movieId={movie.id}
                     title={movie.original_title}
-                    date={`${
-                      monthName[parseInt(movie.release_date.substring(5, 7))]
-                    } ${
-                      parseInt(movie.release_date.substring(8)) === 1
-                        ? `${parseInt(movie.release_date.substring(8))}st`
-                        : parseInt(movie.release_date.substring(8)) === 2
-                        ? `${parseInt(movie.release_date.substring(8))}nd`
-                        : parseInt(movie.release_date.substring(8)) === 3
-                        ? `${parseInt(movie.release_date.substring(8))}rd`
-                        : `${parseInt(movie.release_date.substring(8))}th`
-                    }, ${movie.release_date.substring(0, 4)}`}
+                    date={movie.release_date}
                   />
                 ))}
                 <Spinner />
@@ -74,17 +49,7 @@ const Home = () => {
                     image={IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path}
                     movieId={movie.id}
                     title={movie.original_title}
-                    date={`${
-                      monthName[parseInt(movie.release_date.substring(5, 7))]
-                    } ${
-                      parseInt(movie.release_date.substring(8)) === 1
-                        ? `${parseInt(movie.release_date.substring(8))}st`
-                        : parseInt(movie.release_date.substring(8)) === 2
-                        ? `${parseInt(movie.release_date.substring(8))}nd`
-                        : parseInt(movie.release_date.substring(8)) === 3
-                        ? `${parseInt(movie.release_date.substring(8))}rd`
-                        : `${parseInt(movie.release_date.substring(8))}th`
-                    }, ${movie.release_date.substring(0, 4)}`}
+                    date={movie.release_date}
                   />
                 ))}
                 <Spinner />
@@ -98,17 +63,7 @@ const Home = () => {
                     image={IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path}
                     movieId={movie.id}
                     title={movie.original_title}
-                    date={`${
-                      monthName[parseInt(movie.release_date.substring(5, 7))]
-                    } ${
-                      parseInt(movie.release_date.substring(8)) === 1
-                        ? `${parseInt(movie.release_date.substring(8))}st`
-                        : parseInt(movie.release_date.substring(8)) === 2
-                        ? `${parseInt(movie.release_date.substring(8))}nd`
-                        : parseInt(movie.release_date.substring(8)) === 3
-                        ? `${parseInt(movie.release_date.substring(8))}rd`
-                        : `${parseInt(movie.release_date.substring(8))}th`
-                    }, ${movie.release_date.substring(0, 4)}`}
+                    date={movie.release_date}
                   />
                 ))}
                 <Spinner />
@@ -130,17 +85,7 @@ const Home = () => {
                     image={IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path}
                     movieId={movie.id}
                     title={movie.original_title}
-                    date={`${
-                      monthName[parseInt(movie.release_date.substring(5, 7))]
-                    } ${
-                      parseInt(movie.release_date.substring(8)) === 1
-                        ? `${parseInt(movie.release_date.substring(8))}st`
-                        : parseInt(movie.release_date.substring(8)) === 2
-                        ? `${parseInt(movie.release_date.substring(8))}nd`
-                        : parseInt(movie.release_date.substring(8)) === 3
-                        ? `${parseInt(movie.release_date.substring(8))}rd`
-                        : `${parseInt(movie.release_date.substring(8))}th`
-                    }, ${movie.release_date.substring(0, 4)}`}
+                    date={movie.release_date}
                   />
                 ))}
                 <Spinner />
