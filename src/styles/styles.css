@@ -72,12 +72,9 @@ body {
   font-size: 45px;
 }
 
-.homeContainer {
-  padding: 0 20px 20px 20px;
-}
-
-.homeContainer .heroSection {
-  position: relative;
+.heroSection {
+  position: fixed;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -91,57 +88,90 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 20px auto;
-  max-width: 1300px;
-  border-radius: 20px;
-  overflow: hidden;
 }
 
-.homeContainer .heroSection .blur {
-  position: absolute;
-  top: 510px;
-  width: 100%;
-  height: 50px;
-  background-image: -webkit-gradient(linear, left bottom, left top, from(black), color-stop(black), color-stop(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
-  background-image: linear-gradient(to top, black, black, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
-}
-
-.homeContainer .heroSection img {
-  height: 550px;
+.heroSection img {
+  height: 600px;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.homeContainer .heroSection .heroText {
-  background-color: black;
+.heroSection .heroText {
+  position: absolute;
   padding: 0 40px 40px 40px;
 }
 
-.homeContainer .heroSection .heroText h1 {
+.heroSection .heroText h1 {
   font-size: 60px;
 }
 
 @media (max-width: 800px) {
-  .homeContainer .heroSection .heroText {
+  .heroSection .heroText {
     padding: 0 20px 20px 20px;
   }
-  .homeContainer .heroSection .heroText h1 {
+  .heroSection .heroText h1 {
     font-size: 40px;
   }
 }
 
-.homeContainer .homeGrid .grid {
+.gridContainer {
+  padding-top: 600px;
+}
+
+.gridContainer .gridContent {
+  background-color: #141414;
+  position: relative;
+}
+
+.gridContainer .gridContent .blur {
+  position: absolute;
+  height: 200px;
+  width: 100%;
+  top: -200px;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#141414), to(rgba(0, 0, 0, 0)));
+  background-image: linear-gradient(to top, #141414, rgba(0, 0, 0, 0));
+}
+
+.gridContainer .gridContent .searchbarContainer {
+  padding: 0 20px;
+  position: relative;
+}
+
+.gridContainer .gridContent .searchbarContainer .searchbar {
+  margin: 0 auto;
+  max-width: 1300px;
+}
+
+.gridContainer .gridContent .searchbarContainer .searchbar input {
+  width: 100%;
+  background-color: black;
+  border: none;
+  border-radius: 50px;
+  outline: none;
+  color: white;
+  padding: 20px 30px;
+  font-size: 20px;
+}
+
+.gridContainer .gridContent .homeGrid {
+  padding: 0 20px;
+  position: relative;
+}
+
+.gridContainer .gridContent .homeGrid .grid {
+  position: relative;
   padding-top: 20px;
   margin: 0 auto;
   max-width: 1300px;
 }
 
-.homeContainer .homeGrid .grid h1 {
+.gridContainer .gridContent .homeGrid .grid h1 {
+  position: relative;
   margin-bottom: 20px;
 }
 
-.homeContainer .homeGrid .grid .gridContents {
+.gridContainer .gridContent .homeGrid .grid .gridContents {
   padding-bottom: 20px;
   position: relative;
   display: -ms-grid;
@@ -154,11 +184,11 @@ body {
   grid-gap: 20px;
 }
 
-.homeContainer .homeGrid .grid .gridContents .gridBlur {
+.gridContainer .gridContent .homeGrid .grid .gridContents .gridBlur {
   position: absolute;
 }
 
-.homeContainer .homeGrid .grid .gridContents .thumb img {
+.gridContainer .gridContent .homeGrid .grid .gridContents .thumb img {
   -o-object-fit: contain;
      object-fit: contain;
   width: 100%;
@@ -166,56 +196,61 @@ body {
   overflow: hidden;
 }
 
-.homeContainer .homeGrid .grid .gridContents .thumb .textContainer h1 {
+.gridContainer .gridContent .homeGrid .grid .gridContents .thumb .textContainer h1 {
   font-size: 18px;
   margin: 2px 0 0 0;
 }
 
-.homeContainer .homeGrid .grid .gridContents .thumb .textContainer p {
+.gridContainer .gridContent .homeGrid .grid .gridContents .thumb .textContainer p {
   margin-top: 2px;
   font-size: 14px;
   color: #dadada;
 }
 
 @media (max-width: 768px) {
-  .homeContainer .homeGrid .grid .gridContents .thumb .textContainer h1 {
+  .gridContainer .gridContent .homeGrid .grid .gridContents .thumb .textContainer h1 {
     font-size: 20px;
   }
 }
 
-.homeContainer .homeGrid .grid .gridContents::-webkit-scrollbar {
+.gridContainer .gridContent .homeGrid .grid .gridContents::-webkit-scrollbar {
   width: 0 !important;
 }
 
-.homeContainer .homeGrid .grid .gridContents {
+.gridContainer .gridContent .homeGrid .grid .gridContents {
   overflow: -moz-scrollbars-none;
 }
 
 @media (min-width: 800px) {
-  .homeContainer .homeGrid .grid .gridContents::-webkit-scrollbar {
+  .gridContainer .gridContent .homeGrid .grid .gridContents::-webkit-scrollbar {
     height: 10px;
     max-width: 20px;
   }
-  .homeContainer .homeGrid .grid .gridContents::-webkit-scrollbar-thumb {
+  .gridContainer .gridContent .homeGrid .grid .gridContents::-webkit-scrollbar-thumb {
     background-color: white;
     border-radius: 25px;
   }
-  .homeContainer .homeGrid .grid .gridContents::-webkit-scrollbar-thumb:hover {
+  .gridContainer .gridContent .homeGrid .grid .gridContents::-webkit-scrollbar-thumb:hover {
     background: #dadada;
   }
 }
 
-.homeContainer .searchGrid .grid {
+.gridContainer .gridContent .searchGrid {
+  padding: 0 20px;
+  position: relative;
+}
+
+.gridContainer .gridContent .searchGrid .grid {
   padding-top: 20px;
   margin: 0 auto;
   max-width: 1300px;
 }
 
-.homeContainer .searchGrid .grid h1 {
+.gridContainer .gridContent .searchGrid .grid h1 {
   margin-bottom: 20px;
 }
 
-.homeContainer .searchGrid .grid .gridContents {
+.gridContainer .gridContent .searchGrid .grid .gridContents {
   padding-bottom: 20px;
   position: relative;
   display: -ms-grid;
@@ -225,11 +260,11 @@ body {
   grid-gap: 20px;
 }
 
-.homeContainer .searchGrid .grid .gridContents .gridBlur {
+.gridContainer .gridContent .searchGrid .grid .gridContents .gridBlur {
   position: absolute;
 }
 
-.homeContainer .searchGrid .grid .gridContents .thumb img {
+.gridContainer .gridContent .searchGrid .grid .gridContents .thumb img {
   -o-object-fit: contain;
      object-fit: contain;
   width: 100%;
@@ -237,19 +272,19 @@ body {
   overflow: hidden;
 }
 
-.homeContainer .searchGrid .grid .gridContents .thumb .textContainer h1 {
+.gridContainer .gridContent .searchGrid .grid .gridContents .thumb .textContainer h1 {
   font-size: 18px;
   margin: 2px 0 0 0;
 }
 
-.homeContainer .searchGrid .grid .gridContents .thumb .textContainer p {
+.gridContainer .gridContent .searchGrid .grid .gridContents .thumb .textContainer p {
   margin-top: 2px;
   font-size: 14px;
   color: #dadada;
 }
 
 @media (max-width: 768px) {
-  .homeContainer .searchGrid .grid .gridContents .thumb .textContainer h1 {
+  .gridContainer .gridContent .searchGrid .grid .gridContents .thumb .textContainer h1 {
     font-size: 20px;
   }
 }

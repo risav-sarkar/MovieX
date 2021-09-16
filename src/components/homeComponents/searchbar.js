@@ -15,12 +15,16 @@ const Searchbar = ({ setSearchTerm }) => {
   }, [setSearchTerm, state]);
 
   return (
-    <input
-      type="text"
-      placeholder="Search"
-      onChange={(event) => setState(event.currentTarget.value)}
-      value={state}
-    />
+    <div className="searchbarContainer">
+      <div className="searchbar">
+        <input
+          type="text"
+          placeholder="Search"
+          onChange={(event) => setState(event.currentTarget.value)}
+          value={state}
+        />
+      </div>
+    </div>
   );
 };
 

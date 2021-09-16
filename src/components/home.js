@@ -30,18 +30,18 @@ const Home = () => {
   console.log(state1);
   return (
     <>
-      <Header />
-      <Searchbar setSearchTerm={setSearchTerm} />
-      <div className="homeContainer">
-        {!searchTerm ? (
-          <>
-            {state.results[0] ? (
-              <HeroImage
-                image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${state.results[0].backdrop_path}`}
-                title={state.results[0].original_title}
-                desc={state.results[0].overview}
-              />
-            ) : null}
+      {state.results[0] ? (
+        <HeroImage
+          image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${state.results[0].backdrop_path}`}
+          title={state.results[0].original_title}
+          desc={state.results[0].overview}
+        />
+      ) : null}
+      {!searchTerm ? (
+        <div className="gridContainer">
+          <div className="gridContent">
+            <div className="blur"></div>
+            <Searchbar setSearchTerm={setSearchTerm} />
             <div className="homeGrid">
               <Grid header="Now Playing">
                 {state1.results.map((movie) => (
@@ -115,35 +115,41 @@ const Home = () => {
                 <Spinner />
               </Grid>
             </div>
-          </>
-        ) : (
-          <div className="searchGrid">
-            <Grid header="Results">
-              {state.results.map((movie) => (
-                <Thumbnails
-                  key={movie.id}
-                  clickable
-                  image={IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path}
-                  movieId={movie.id}
-                  title={movie.original_title}
-                  date={`${
-                    monthName[parseInt(movie.release_date.substring(5, 7))]
-                  } ${
-                    parseInt(movie.release_date.substring(8)) === 1
-                      ? `${parseInt(movie.release_date.substring(8))}st`
-                      : parseInt(movie.release_date.substring(8)) === 2
-                      ? `${parseInt(movie.release_date.substring(8))}nd`
-                      : parseInt(movie.release_date.substring(8)) === 3
-                      ? `${parseInt(movie.release_date.substring(8))}rd`
-                      : `${parseInt(movie.release_date.substring(8))}th`
-                  }, ${movie.release_date.substring(0, 4)}`}
-                />
-              ))}
-              <Spinner />
-            </Grid>
           </div>
-        )}
-      </div>
+        </div>
+      ) : (
+        <div className="gridContainer">
+          <div className="gridContent">
+            <div className="blur"></div>
+            <Searchbar setSearchTerm={setSearchTerm} />
+            <div className="searchGrid">
+              <Grid header="Results">
+                {state.results.map((movie) => (
+                  <Thumbnails
+                    key={movie.id}
+                    clickable
+                    image={IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path}
+                    movieId={movie.id}
+                    title={movie.original_title}
+                    date={`${
+                      monthName[parseInt(movie.release_date.substring(5, 7))]
+                    } ${
+                      parseInt(movie.release_date.substring(8)) === 1
+                        ? `${parseInt(movie.release_date.substring(8))}st`
+                        : parseInt(movie.release_date.substring(8)) === 2
+                        ? `${parseInt(movie.release_date.substring(8))}nd`
+                        : parseInt(movie.release_date.substring(8)) === 3
+                        ? `${parseInt(movie.release_date.substring(8))}rd`
+                        : `${parseInt(movie.release_date.substring(8))}th`
+                    }, ${movie.release_date.substring(0, 4)}`}
+                  />
+                ))}
+                <Spinner />
+              </Grid>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };

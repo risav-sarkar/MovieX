@@ -60,157 +60,176 @@ body {
   }
 }
 
-.homeContainer {
-  padding: 0 20px 20px 20px;
-  .heroSection {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 20px auto;
-    max-width: $max_width;
-    border-radius: 20px;
-    overflow: hidden;
-    .blur {
-      position: absolute;
-      top: 510px;
-      width: 100%;
-      height: 50px;
-      background-image: linear-gradient(
-        to top,
-        rgb(0, 0, 0),
-        rgb(0, 0, 0),
-        rgba(0, 0, 0, 0.5),
-        rgba(0, 0, 0, 0)
-      );
+.heroSection {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  img {
+    height: 600px;
+    width: 100%;
+    object-fit: cover;
+  }
+  .heroText {
+    position: absolute;
+    h1 {
+      font-size: 60px;
     }
-    img {
-      height: 550px;
-      width: 100%;
-      object-fit: cover;
-    }
+    padding: 0 40px 40px 40px;
+  }
+  @media (max-width: 800px) {
     .heroText {
+      padding: 0 20px 20px 20px;
       h1 {
-        font-size: 60px;
-      }
-      background-color: $background1;
-      padding: 0 40px 40px 40px;
-    }
-    @media (max-width: 800px) {
-      .heroText {
-        padding: 0 20px 20px 20px;
-        h1 {
-          font-size: 40px;
-        }
+        font-size: 40px;
       }
     }
   }
+}
 
-  .homeGrid {
-    .grid {
-      padding-top: 20px;
-      margin: 0 auto;
-      max-width: $max_width;
-      h1 {
-        margin-bottom: 20px;
-      }
-      .gridContents {
-        padding-bottom: 20px;
-        position: relative;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        grid-auto-flow: column;
-        grid-auto-columns: minmax(200px, 1fr);
-        overflow-x: scroll;
-        grid-gap: 20px;
-        .gridBlur {
-          position: absolute;
+.gridContainer {
+  padding-top: 600px;
+  .gridContent {
+    background-color: $background2;
+    position: relative;
+    .blur {
+      position: absolute;
+      height: 200px;
+      width: 100%;
+      top: -200px;
+      background-image: linear-gradient(to top, $background2, rgba(0, 0, 0, 0));
+    }
+    .searchbarContainer {
+      padding: 0 20px;
+      position: relative;
+      .searchbar {
+        margin: 0 auto;
+        max-width: $max_width;
+        input {
+          width: 100%;
+          background-color: $background1;
+          border: none;
+          border-radius: 50px;
+          outline: none;
+          color: $text_white;
+          padding: 20px 30px;
+          font-size: 20px;
         }
-        .thumb {
-          img {
-            object-fit: contain;
-            width: 100%;
-            border-radius: 20px;
-            overflow: hidden;
+      }
+    }
+    .homeGrid {
+      padding: 0 20px;
+      position: relative;
+      .grid {
+        position: relative;
+        padding-top: 20px;
+        margin: 0 auto;
+        max-width: $max_width;
+        h1 {
+          position: relative;
+          margin-bottom: 20px;
+        }
+        .gridContents {
+          padding-bottom: 20px;
+          position: relative;
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+          grid-auto-flow: column;
+          grid-auto-columns: minmax(200px, 1fr);
+          overflow-x: scroll;
+          grid-gap: 20px;
+          .gridBlur {
+            position: absolute;
           }
-          .textContainer {
-            h1 {
-              font-size: 18px;
-              margin: 2px 0 0 0;
+          .thumb {
+            img {
+              object-fit: contain;
+              width: 100%;
+              border-radius: 20px;
+              overflow: hidden;
             }
-            p {
-              margin-top: 2px;
-              font-size: 14px;
-              color: $text_grey;
-            }
-            @media (max-width: 768px) {
+            .textContainer {
               h1 {
-                font-size: 20px;
+                font-size: 18px;
+                margin: 2px 0 0 0;
+              }
+              p {
+                margin-top: 2px;
+                font-size: 14px;
+                color: $text_grey;
+              }
+              @media (max-width: 768px) {
+                h1 {
+                  font-size: 20px;
+                }
               }
             }
           }
         }
-      }
-      .gridContents::-webkit-scrollbar {
-        width: 0 !important;
-      }
-      .gridContents {
-        overflow: -moz-scrollbars-none;
-      }
-      @media (min-width: 800px) {
         .gridContents::-webkit-scrollbar {
-          height: 10px;
-          max-width: 20px;
+          width: 0 !important;
         }
-        .gridContents::-webkit-scrollbar-thumb {
-          background-color: $text_white;
-          border-radius: 25px;
+        .gridContents {
+          overflow: -moz-scrollbars-none;
         }
-        .gridContents::-webkit-scrollbar-thumb:hover {
-          background: $text_grey;
+        @media (min-width: 800px) {
+          .gridContents::-webkit-scrollbar {
+            height: 10px;
+            max-width: 20px;
+          }
+          .gridContents::-webkit-scrollbar-thumb {
+            background-color: $text_white;
+            border-radius: 25px;
+          }
+          .gridContents::-webkit-scrollbar-thumb:hover {
+            background: $text_grey;
+          }
         }
       }
     }
-  }
 
-  .searchGrid {
-    .grid {
-      padding-top: 20px;
-      margin: 0 auto;
-      max-width: $max_width;
-      h1 {
-        margin-bottom: 20px;
-      }
-      .gridContents {
-        padding-bottom: 20px;
-        position: relative;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-        grid-gap: 20px;
-        .gridBlur {
-          position: absolute;
+    .searchGrid {
+      padding: 0 20px;
+      position: relative;
+      .grid {
+        padding-top: 20px;
+        margin: 0 auto;
+        max-width: $max_width;
+        h1 {
+          margin-bottom: 20px;
         }
-        .thumb {
-          img {
-            object-fit: contain;
-            width: 100%;
-            border-radius: 20px;
-            overflow: hidden;
+        .gridContents {
+          padding-bottom: 20px;
+          position: relative;
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+          grid-gap: 20px;
+          .gridBlur {
+            position: absolute;
           }
-          .textContainer {
-            h1 {
-              font-size: 18px;
-              margin: 2px 0 0 0;
+          .thumb {
+            img {
+              object-fit: contain;
+              width: 100%;
+              border-radius: 20px;
+              overflow: hidden;
             }
-            p {
-              margin-top: 2px;
-              font-size: 14px;
-              color: $text_grey;
-            }
-            @media (max-width: 768px) {
+            .textContainer {
               h1 {
-                font-size: 20px;
+                font-size: 18px;
+                margin: 2px 0 0 0;
+              }
+              p {
+                margin-top: 2px;
+                font-size: 14px;
+                color: $text_grey;
+              }
+              @media (max-width: 768px) {
+                h1 {
+                  font-size: 20px;
+                }
               }
             }
           }
