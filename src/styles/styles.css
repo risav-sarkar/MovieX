@@ -99,7 +99,8 @@ body {
 
 .heroSection .heroText {
   position: absolute;
-  padding: 0 40px 40px 40px;
+  bottom: 80px;
+  padding: 0 20px;
 }
 
 .heroSection .heroText h1 {
@@ -116,7 +117,7 @@ body {
 }
 
 .gridContainer {
-  padding-top: 600px;
+  padding-top: 80vh;
 }
 
 .gridContainer .gridContent {
@@ -135,7 +136,8 @@ body {
 
 .gridContainer .gridContent .searchbarContainer {
   padding: 0 20px;
-  position: relative;
+  position: -webkit-sticky;
+  position: sticky;
 }
 
 .gridContainer .gridContent .searchbarContainer .searchbar {
@@ -192,7 +194,7 @@ body {
   -o-object-fit: contain;
      object-fit: contain;
   width: 100%;
-  border-radius: 20px;
+  border-radius: 10px;
   overflow: hidden;
 }
 
@@ -268,7 +270,7 @@ body {
   -o-object-fit: contain;
      object-fit: contain;
   width: 100%;
-  border-radius: 20px;
+  border-radius: 10px;
   overflow: hidden;
 }
 
@@ -286,5 +288,12 @@ body {
 @media (max-width: 768px) {
   .gridContainer .gridContent .searchGrid .grid .gridContents .thumb .textContainer h1 {
     font-size: 20px;
+  }
+}
+
+@media (max-width: 800px) {
+  .gridContainer .gridContent .searchGrid .grid .gridContents {
+    -ms-grid-columns: (minmax(160px, 1fr))[auto-fill];
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   }
 }
