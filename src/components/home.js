@@ -5,13 +5,24 @@ import HeroImage from "./homeComponents/heroImage";
 import Grid from "./grid";
 import Thumbnails from "./thumbnails";
 import Searchbar from "./homeComponents/searchbar";
+import Button from "./homeComponents/button";
 
 const Home = () => {
-  // eslint-disable-next-line
-  const { state, state1, state2, loading, error, searchTerm, setSearchTerm } =
-    useHomeFetch();
-  console.log(state);
-  console.log(state1);
+  const {
+    state,
+    moviesNow,
+    moviesUp,
+    loading,
+    error,
+    searchTerm,
+    setSearchTerm,
+    setIsLoadingMoreState,
+    setIsLoadingMoreMoviesNow,
+    setIsLoadingMoreMoviesUp,
+  } = useHomeFetch();
+
+  if (error) return <h1>Something Went Wrong</h1>;
+
   return (
     <>
       {state.results[0] ? (
@@ -28,9 +39,9 @@ const Home = () => {
             <Searchbar setSearchTerm={setSearchTerm} />
             <div className="homeGrid">
               <Grid header="Now Playing">
-                {state1.results.map((movie) => (
+                {moviesNow.results.map((movie) => (
                   <Thumbnails
-                    key={movie.id}
+                    key={"nowPlaying" + movie.id}
                     clickable
                     image={IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path}
                     movieId={movie.id}
@@ -38,13 +49,19 @@ const Home = () => {
                     date={movie.release_date}
                   />
                 ))}
-                <Spinner />
+                {loading && <Spinner />}
+                {moviesNow.page < moviesNow.total_pages && !loading && (
+                  <Button
+                    text="Load"
+                    callback={() => setIsLoadingMoreMoviesNow(true)}
+                  />
+                )}
               </Grid>
 
               <Grid header="Popular Movies">
                 {state.results.map((movie) => (
                   <Thumbnails
-                    key={movie.id}
+                    key={"movie" + movie.id}
                     clickable
                     image={IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path}
                     movieId={movie.id}
@@ -52,13 +69,19 @@ const Home = () => {
                     date={movie.release_date}
                   />
                 ))}
-                <Spinner />
+                {loading && <Spinner />}
+                {state.page < state.total_pages && !loading && (
+                  <Button
+                    text="Load"
+                    callback={() => setIsLoadingMoreState(true)}
+                  />
+                )}
               </Grid>
 
               <Grid header="Upcoming">
-                {state2.results.map((movie) => (
+                {moviesUp.results.map((movie) => (
                   <Thumbnails
-                    key={movie.id}
+                    key={"up" + movie.id}
                     clickable
                     image={IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path}
                     movieId={movie.id}
@@ -66,7 +89,14 @@ const Home = () => {
                     date={movie.release_date}
                   />
                 ))}
-                <Spinner />
+
+                {loading && <Spinner />}
+                {moviesUp.page < moviesUp.total_pages && !loading && (
+                  <Button
+                    text="Load"
+                    callback={() => setIsLoadingMoreMoviesUp(true)}
+                  />
+                )}
               </Grid>
             </div>
           </div>
@@ -80,7 +110,7 @@ const Home = () => {
               <Grid header="Results">
                 {state.results.map((movie) => (
                   <Thumbnails
-                    key={movie.id}
+                    key={"search" + movie.id}
                     clickable
                     image={IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path}
                     movieId={movie.id}
@@ -88,8 +118,14 @@ const Home = () => {
                     date={movie.release_date}
                   />
                 ))}
-                <Spinner />
               </Grid>
+              {loading && <Spinner />}
+              {state.page < state.total_pages && !loading && (
+                <Button
+                  text="Load"
+                  callback={() => setIsLoadingMoreState(true)}
+                />
+              )}
             </div>
           </div>
         </div>

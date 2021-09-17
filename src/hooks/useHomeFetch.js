@@ -10,8 +10,11 @@ const initialState = {
 
 export const useHomeFetch = () => {
   const [state, setState] = useState(initialState);
-  const [state1, setState1] = useState(initialState);
-  const [state2, setState2] = useState(initialState);
+  const [moviesNow, setMoviesNow] = useState(initialState);
+  const [moviesUp, setMoviesUp] = useState(initialState);
+  const [isLoadingMoreState, setIsLoadingMoreState] = useState(false);
+  const [isLoadingMoreMoviesNow, setIsLoadingMoreMoviesNow] = useState(false);
+  const [isLoadingMoreMoviesUp, setIsLoadingMoreMoviesUp] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -39,7 +42,7 @@ export const useHomeFetch = () => {
       setError(false);
       setLoading(true);
       const movies = await API.fetchNowMovies(page);
-      setState1((prev) => ({
+      setMoviesNow((prev) => ({
         ...movies,
         results:
           page > 1 ? [...prev.results, ...movies.results] : [...movies.results],
@@ -55,7 +58,7 @@ export const useHomeFetch = () => {
       setError(false);
       setLoading(true);
       const movies = await API.fetchUpcomingMovies(page);
-      setState2((prev) => ({
+      setMoviesUp((prev) => ({
         ...movies,
         results:
           page > 1 ? [...prev.results, ...movies.results] : [...movies.results],
@@ -67,11 +70,39 @@ export const useHomeFetch = () => {
   };
 
   useEffect(() => {
-    setState(initialState);
     fetchMovies(1, searchTerm);
     fetchNowMovies(1);
     fetchUpcomingMovies(1);
   }, [searchTerm]);
 
-  return { state, state1, state2, loading, error, searchTerm, setSearchTerm };
+  useEffect(() => {
+    if (!isLoadingMoreState) return;
+    fetchMovies(state.page + 1, searchTerm);
+    setIsLoadingMoreState(false);
+  }, [isLoadingMoreState, searchTerm, state.page]);
+
+  useEffect(() => {
+    if (!isLoadingMoreMoviesNow) return;
+    fetchNowMovies(moviesNow.page + 1);
+    setIsLoadingMoreMoviesNow(false);
+  }, [isLoadingMoreMoviesNow, moviesNow.page]);
+
+  useEffect(() => {
+    if (!isLoadingMoreMoviesUp) return;
+    fetchUpcomingMovies(moviesUp.page + 1);
+    setIsLoadingMoreMoviesUp(false);
+  }, [isLoadingMoreMoviesUp, moviesUp.page]);
+
+  return {
+    state,
+    moviesNow,
+    moviesUp,
+    loading,
+    error,
+    searchTerm,
+    setSearchTerm,
+    setIsLoadingMoreState,
+    setIsLoadingMoreMoviesNow,
+    setIsLoadingMoreMoviesUp,
+  };
 };
