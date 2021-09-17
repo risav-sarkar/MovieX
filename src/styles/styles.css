@@ -330,20 +330,22 @@ body {
 
 .footer {
   width: 100%;
-  background-color: black;
+  background-color: #000014;
   position: relative;
 }
 
-.footer a {
-  background-color: white;
-  padding: 3px 5px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 600;
-  color: #000013;
+.footer .blur {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#000014), to(rgba(0, 0, 0, 0)));
+  background-image: linear-gradient(to top, #000014, rgba(0, 0, 0, 0));
+  height: 40px;
+  width: 100%;
 }
 
 .footer .logo {
+  position: relative;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
@@ -354,6 +356,14 @@ body {
   padding: 20px;
 }
 
+.footer .logo .tmdb {
+  place-self: center;
+}
+
+.footer .logo .tmdb .logoImage {
+  width: 120px;
+}
+
 @media (max-width: 768px) {
   .footer .logo {
     -ms-grid-columns: 1fr;
@@ -362,13 +372,17 @@ body {
 }
 
 .footer .name {
+  position: relative;
   text-align: center;
   padding: 20px;
   width: 100%;
-  background-color: #000013;
 }
 
-.logoImage {
-  width: 100px;
-  height: 50px;
+.footer .name a {
+  background-color: white;
+  padding: 3px 5px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #000014;
 }

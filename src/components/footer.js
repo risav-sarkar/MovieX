@@ -3,12 +3,13 @@ import Tmdb from "../styles/tmdb.svg";
 const Footer = () => {
   return (
     <div className="footer">
+      <div className="blur"></div>
       <div className="logo">
         <div>
-          <h1>MoviesX</h1>
-          <p>A website where you can explore popular and upcoming movies!</p>
+          <h1>MoviesX.</h1>
+          <p>A website where you can explore movies!</p>
         </div>
-        <div>
+        <div className="tmdb">
           <img className="logoImage" src={Tmdb} alt="tmdbLogo" />
         </div>
       </div>
