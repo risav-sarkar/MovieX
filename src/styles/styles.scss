@@ -174,7 +174,7 @@ body {
           }
           .thumb {
             img {
-              object-fit: contain;
+              object-fit: cover;
               width: 100%;
               border-radius: 10px;
               overflow: hidden;
@@ -240,7 +240,7 @@ body {
           }
           .thumb {
             img {
-              object-fit: contain;
+              object-fit: cover;
               width: 100%;
               border-radius: 10px;
               overflow: hidden;
