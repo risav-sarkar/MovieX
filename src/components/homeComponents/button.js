@@ -1,8 +1,10 @@
 const Button = ({ text, callback }) => {
   return (
-    <button className="viewBtn" onClick={callback}>
-      {text}
-    </button>
+    <div className="loadBtn">
+      <button className="viewBtn" onClick={callback}>
+        {text}
+      </button>
+    </div>
   );
 };
 

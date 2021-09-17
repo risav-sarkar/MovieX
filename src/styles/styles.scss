@@ -60,6 +60,29 @@ body {
   }
 }
 
+.loadBtn {
+  display: grid;
+  place-items: center;
+  button {
+    color: $text_white;
+    border: 2px solid $text_white;
+    width: 120px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    background-color: transparent;
+    transition: 0.3s;
+    cursor: pointer;
+    &:hover {
+      background-color: $text_white;
+      color: black;
+      box-shadow: 0 0 10px 2px $text_white;
+    }
+  }
+}
+
 .heroSection {
   position: fixed;
   width: 100%;
@@ -95,6 +118,7 @@ body {
   padding-top: 80vh;
   .gridContent {
     background-color: $background2;
+    padding-bottom: 50px;
     position: relative;
     .blur {
       position: absolute;
@@ -246,4 +270,41 @@ body {
       }
     }
   }
+}
+
+.footer {
+  width: 100%;
+  background-color: black;
+  position: relative;
+  a {
+    background-color: $text_white;
+    padding: 3px 5px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    color: rgb(0, 0, 19);
+  }
+  .logo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    max-width: $max_width;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  @media (max-width: 768px) {
+    .logo {
+      grid-template-columns: 1fr;
+    }
+  }
+  .name {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    background-color: rgb(0, 0, 19);
+  }
+}
+.logoImage {
+  width: 100px;
+  height: 50px;
 }

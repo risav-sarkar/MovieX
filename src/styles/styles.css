@@ -72,6 +72,34 @@ body {
   font-size: 45px;
 }
 
+.loadBtn {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.loadBtn button {
+  color: white;
+  border: 2px solid white;
+  width: 120px;
+  height: 40px;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  background-color: transparent;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.loadBtn button:hover {
+  background-color: white;
+  color: black;
+  -webkit-box-shadow: 0 0 10px 2px white;
+          box-shadow: 0 0 10px 2px white;
+}
+
 .heroSection {
   position: fixed;
   width: 100%;
@@ -123,6 +151,7 @@ body {
 
 .gridContainer .gridContent {
   background-color: #141414;
+  padding-bottom: 50px;
   position: relative;
 }
 
@@ -297,4 +326,49 @@ body {
     -ms-grid-columns: (minmax(160px, 1fr))[auto-fill];
         grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   }
+}
+
+.footer {
+  width: 100%;
+  background-color: black;
+  position: relative;
+}
+
+.footer a {
+  background-color: white;
+  padding: 3px 5px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #000013;
+}
+
+.footer .logo {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .footer .logo {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+.footer .name {
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  background-color: #000013;
+}
+
+.logoImage {
+  width: 100px;
+  height: 50px;
 }
