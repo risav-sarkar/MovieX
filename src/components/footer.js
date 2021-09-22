@@ -1,4 +1,5 @@
 import Tmdb from "../styles/tmdb.svg";
+import Logo from "../styles/2.png";
 
 const Footer = () => {
   return (
@@ -6,7 +7,10 @@ const Footer = () => {
       <div className="blur"></div>
       <div className="logo">
         <div>
-          <h1>MoviesX.</h1>
+          <div className="logoContainer">
+            <img src={Logo} alt="Logo" />
+            <h1>MoviesX</h1>
+          </div>
           <p>A website where you can explore movies!</p>
         </div>
         <div className="tmdb">
@@ -23,7 +27,7 @@ const Footer = () => {
           >
             Risav
           </a>{" "}
-          with ♡
+          With ♡
         </p>
       </div>
     </div>

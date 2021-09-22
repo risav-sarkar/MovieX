@@ -356,6 +356,21 @@ body {
   padding: 20px;
 }
 
+.footer .logo .logoContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 60px;
+  color: red;
+}
+
+.footer .logo .logoContainer img {
+  height: 60px;
+}
+
 .footer .logo .tmdb {
   place-self: center;
 }

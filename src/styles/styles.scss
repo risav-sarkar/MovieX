@@ -293,6 +293,15 @@ body {
     max-width: $max_width;
     margin: 0 auto;
     padding: 20px;
+    .logoContainer {
+      display: flex;
+      align-items: center;
+      height: 60px;
+      color: red;
+      img {
+        height: 60px;
+      }
+    }
     .tmdb {
       place-self: center;
       .logoImage {
