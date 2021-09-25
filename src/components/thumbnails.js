@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Thumbnails = ({ image, movieId, clickable, title, date }) => {
   const monthName = [
     "",
@@ -16,7 +18,14 @@ const Thumbnails = ({ image, movieId, clickable, title, date }) => {
   ];
   return (
     <div className="thumb">
-      <img src={image} alt="thumbnail" />
+      {clickable ? (
+        <Link to={`/${movieId}`}>
+          <img src={image} alt="thumbnail" />
+        </Link>
+      ) : (
+        <img src={image} alt="thumbnail" />
+      )}
+
       <div className="textContainer">
         <h1>{title}</h1>
         <p>

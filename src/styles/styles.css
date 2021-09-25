@@ -226,6 +226,12 @@ body {
   width: 100%;
   border-radius: 10px;
   overflow: hidden;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.gridContainer .gridContent .homeGrid .grid .gridContents .thumb img:hover {
+  opacity: 0.5;
 }
 
 .gridContainer .gridContent .homeGrid .grid .gridContents .thumb .textContainer h1 {
@@ -302,6 +308,12 @@ body {
   width: 100%;
   border-radius: 10px;
   overflow: hidden;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.gridContainer .gridContent .searchGrid .grid .gridContents .thumb img:hover {
+  opacity: 0.5;
 }
 
 .gridContainer .gridContent .searchGrid .grid .gridContents .thumb .textContainer h1 {
