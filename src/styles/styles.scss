@@ -25,6 +25,20 @@ body {
   background-color: $background2;
 }
 
+* body::-webkit-scrollbar {
+  width: 12px;
+}
+body::-webkit-scrollbar-track {
+  background: hsla(0, 0%, 2%, 0);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(207, 207, 207);
+  border-radius: 25px;
+  border: 3px solid hsl(0, 0%, 2%);
+}
+body::-webkit-scrollbar-thumb:hover {
+  background: hsl(0, 0%, 60%);
+}
 #root {
   height: 100%;
   width: 100%;
