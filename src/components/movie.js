@@ -1,4 +1,4 @@
-import { IMAGE_BASE_URL, BACKDROP_SIZE, POSTER_SIZE } from "../config";
+import { IMAGE_BASE_URL, BACKDROP_SIZE } from "../config";
 import { useParams } from "react-router";
 import Spinner from "./spinner";
 import HeroImage from "./homeComponents/heroImage";
