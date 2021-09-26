@@ -1,8 +1,10 @@
-import { IMAGE_BASE_URL, BACKDROP_SIZE } from "../config";
+import { IMAGE_BASE_URL, BACKDROP_SIZE, POSTER_SIZE } from "../config";
+import { useMovieFetch } from "../hooks/useMovieFetch";
 import { useParams } from "react-router";
 import Spinner from "./spinner";
 import HeroImage from "./homeComponents/heroImage";
-import { useMovieFetch } from "../hooks/useMovieFetch";
+import Grid from "./grid";
+import Thumbnails from "./thumbnails";
 
 const Movie = () => {
   const { movieId } = useParams();
@@ -35,6 +37,43 @@ const Movie = () => {
               ))}
             </div>
             <p>{state.overview}</p>
+            <div className="movieSpecs">
+              <h3>Directed By:</h3>
+              {state.directors.map((e) => (
+                <h3 key={e.id}>{e.name}</h3>
+              ))}
+            </div>
+            <div className="movieSpecs">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={state.homepage}
+              >
+                <button className="visitBtn">Visit</button>
+              </a>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={`https://www.imdb.com/title/${state.imdb_id}/`}
+              >
+                <button className="imdbBtn">IMDb</button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className="movieSecondary">
+          <div className="blur"></div>
+          <div className="movieGrids">
+            <Grid header="Cast">
+              {state.actors.map((movie) => (
+                <Thumbnails
+                  key={"search" + movie.id}
+                  image={IMAGE_BASE_URL + POSTER_SIZE + movie.profile_path}
+                  title={movie.name}
+                  role={movie.character}
+                />
+              ))}
+            </Grid>
           </div>
         </div>
       </div>

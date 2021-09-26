@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Thumbnails = ({ image, movieId, clickable, title, date }) => {
+const Thumbnails = ({ image, movieId, clickable, title, role, date }) => {
   const monthName = [
     "",
     "Jan",
@@ -28,6 +28,7 @@ const Thumbnails = ({ image, movieId, clickable, title, date }) => {
 
       <div className="textContainer">
         <h1>{title}</h1>
+        <h5>{role}</h5>
         <p>
           {date
             ? `${monthName[parseInt(date.substring(5, 7))]} ${
