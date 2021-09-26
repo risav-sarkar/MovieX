@@ -141,12 +141,14 @@ body::-webkit-scrollbar-thumb:hover {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: center top;
+     object-position: center top;
 }
 
 .heroSection .heroText {
   position: absolute;
   max-width: 1300px;
-  bottom: 80px;
+  bottom: 60px;
   padding: 0 20px;
 }
 
@@ -355,6 +357,100 @@ body::-webkit-scrollbar-thumb:hover {
   .gridContainer .gridContent .searchGrid .grid .gridContents {
     -ms-grid-columns: (minmax(160px, 1fr))[auto-fill];
         grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+}
+
+.movie .heroSection {
+  position: relative;
+}
+
+.movie .movieDetailsContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40vw;
+  height: 80vh;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.movie .movieDetailsContainer .blur {
+  position: absolute;
+  width: 60vw;
+  height: 100%;
+  left: 0;
+  background-image: -webkit-gradient(linear, left top, right top, from(#141414), to(rgba(0, 0, 0, 0)));
+  background-image: linear-gradient(to right, #141414, rgba(0, 0, 0, 0));
+}
+
+.movie .movieDetailsContainer .movieDetails {
+  margin: 0 auto;
+  padding-left: 50px;
+  z-index: 999;
+}
+
+.movie .movieDetailsContainer .movieDetails h1 {
+  font-size: 60px;
+}
+
+.movie .movieDetailsContainer .movieDetails h3 {
+  margin-bottom: 20px;
+}
+
+.movie .movieDetailsContainer .movieDetails .movieSpecs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-gap: 10px;
+  color: #dadada;
+  margin-bottom: 10px;
+}
+
+.movie .movieDetailsContainer .movieDetails .movieSpecs .bar {
+  height: 20px;
+  width: 3px;
+  border-radius: 50px;
+  background-color: #dadada;
+}
+
+@media (max-width: 750px) {
+  .movie .movieDetailsContainer {
+    width: 50vh;
+  }
+  .movie .movieDetailsContainer .blur {
+    width: 70vw;
+  }
+  .movie .movieDetailsContainer .movieDetails {
+    padding-left: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .movie .movieDetailsContainer {
+    position: relative;
+    width: auto;
+    height: auto;
+    top: -100px;
+  }
+  .movie .movieDetailsContainer .blur {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#141414), to(rgba(0, 0, 0, 0)));
+    background-image: linear-gradient(to top, #141414, rgba(0, 0, 0, 0));
+    top: 0;
+    display: block;
+  }
+  .movie .movieDetailsContainer .movieDetails {
+    padding: 0 20px;
+    z-index: 999;
+  }
+  .movie .movieDetailsContainer .movieDetails h1 {
+    font-size: 50px;
   }
 }
 

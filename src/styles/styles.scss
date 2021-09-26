@@ -39,6 +39,7 @@ body::-webkit-scrollbar-thumb {
 body::-webkit-scrollbar-thumb:hover {
   background: hsl(0, 0%, 60%);
 }
+
 #root {
   height: 100%;
   width: 100%;
@@ -109,11 +110,12 @@ body::-webkit-scrollbar-thumb:hover {
     height: 80vh;
     width: 100%;
     object-fit: cover;
+    object-position: center top;
   }
   .heroText {
     position: absolute;
     max-width: $max_width;
-    bottom: 80px;
+    bottom: 60px;
     h1 {
       font-size: 60px;
     }
@@ -289,6 +291,94 @@ body::-webkit-scrollbar-thumb:hover {
           .gridContents {
             grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
           }
+        }
+      }
+    }
+  }
+}
+
+.movie {
+  .heroSection {
+    position: relative;
+  }
+  .movieDetailsContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40vw;
+    height: 80vh;
+    display: grid;
+    place-items: center;
+    .blur {
+      position: absolute;
+      width: 60vw;
+      height: 100%;
+      left: 0;
+      background-image: linear-gradient(
+        to right,
+        $background2,
+        rgba(0, 0, 0, 0)
+      );
+    }
+    .movieDetails {
+      margin: 0 auto;
+      padding-left: 50px;
+      z-index: 999;
+      h1 {
+        font-size: 60px;
+      }
+      h3 {
+        margin-bottom: 20px;
+      }
+      .movieSpecs {
+        display: flex;
+        align-items: center;
+        grid-gap: 10px;
+        color: $text_grey;
+        margin-bottom: 10px;
+        .bar {
+          height: 20px;
+          width: 3px;
+          border-radius: 50px;
+          background-color: $text_grey;
+        }
+      }
+    }
+  }
+  @media (max-width: 750px) {
+    .movieDetailsContainer {
+      width: 50vh;
+      .blur {
+        width: 70vw;
+      }
+      .movieDetails {
+        padding-left: 20px;
+      }
+    }
+  }
+  @media (max-width: 500px) {
+    .movieDetailsContainer {
+      position: relative;
+      width: auto;
+      height: auto;
+      top: -100px;
+      .blur {
+        position: absolute;
+        width: 100%;
+        height: 100px;
+        background-image: linear-gradient(
+          to top,
+          $background2,
+          rgba(0, 0, 0, 0)
+        );
+        top: 0;
+        display: block;
+      }
+      .movieDetails {
+        padding: 0 20px;
+        z-index: 999;
+        h1 {
+          font-size: 50px;
         }
       }
     }
