@@ -1,11 +1,12 @@
 import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL } from "../config";
 import { useHomeFetch } from "../hooks/useHomeFetch";
 import Spinner from "./spinner";
-import HeroImage from "./homeComponents/heroImage";
+import HeroImage from "./heroImage";
 import Grid from "./grid";
 import Thumbnails from "./thumbnails";
-import Searchbar from "./homeComponents/searchbar";
-import Button from "./homeComponents/button";
+import Searchbar from "./searchbar";
+import Button from "./button";
+import noImage from "../styles/noImage.png";
 
 const Home = () => {
   const {
@@ -43,7 +44,11 @@ const Home = () => {
                   <Thumbnails
                     key={"nowPlaying" + movie.id}
                     clickable
-                    image={IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path}
+                    image={
+                      movie.poster_path
+                        ? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
+                        : noImage
+                    }
                     movieId={movie.id}
                     title={movie.original_title}
                     date={movie.release_date}
@@ -63,7 +68,11 @@ const Home = () => {
                   <Thumbnails
                     key={"movie" + movie.id}
                     clickable
-                    image={IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path}
+                    image={
+                      movie.poster_path
+                        ? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
+                        : noImage
+                    }
                     movieId={movie.id}
                     title={movie.original_title}
                     date={movie.release_date}
@@ -83,7 +92,11 @@ const Home = () => {
                   <Thumbnails
                     key={"up" + movie.id}
                     clickable
-                    image={IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path}
+                    image={
+                      movie.poster_path
+                        ? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
+                        : noImage
+                    }
                     movieId={movie.id}
                     title={movie.original_title}
                     date={movie.release_date}
@@ -112,7 +125,11 @@ const Home = () => {
                   <Thumbnails
                     key={"search" + movie.id}
                     clickable
-                    image={IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path}
+                    image={
+                      movie.poster_path
+                        ? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
+                        : noImage
+                    }
                     movieId={movie.id}
                     title={movie.original_title}
                     date={movie.release_date}

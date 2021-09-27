@@ -421,6 +421,15 @@ body::-webkit-scrollbar-thumb:hover {
   background-color: #d6d6d6;
 }
 
+.movie .movieDetailsContainer .movieDetails .movieSpecs .genres {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  grid-gap: 5px;
+}
+
 .movie .movieDetailsContainer .movieDetails .movieSpecs button {
   padding: 10px 30px;
   border-radius: 20px;

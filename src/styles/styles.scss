@@ -345,6 +345,12 @@ body::-webkit-scrollbar-thumb:hover {
           border-radius: 50px;
           background-color: $text_grey;
         }
+        .genres {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          overflow: hidden;
+          grid-gap: 5px;
+        }
         button {
           padding: 10px 30px;
           border-radius: 20px;
