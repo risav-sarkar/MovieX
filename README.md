@@ -1,5 +1,3 @@
-# movieX
-
 <h1 align="center">MoviesX</h1>
 
 > <p align="center">A website where you can explore movies!<p>
