@@ -11,8 +11,6 @@
 
 MoviesX is a website where one can view popular and upcoming movies. It also has a movie search functionality and one can view cast, directors etc of respective movies. It has a good frontend design and responsive for mobile devices. The website is built using React.js and hosted in Netlify. The data is fetched from [TMDB](https://www.themoviedb.org/).
 
-<br>
-
 ## 🚀 Usage
 
 The website is hosted in Netlify. [Click here to Visit](https://moviesx.netlify.app/)
