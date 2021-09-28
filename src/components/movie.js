@@ -41,7 +41,9 @@ const Movie = () => {
               <div className="bar"></div>
               <div className="genres">
                 {state.genres.map((e) => (
-                  <h4 key={e.id}>{e.name}</h4>
+                  <h4 key={e.id}>
+                    {e.name === "Science Fiction" ? "Sci-Fi" : e.name}
+                  </h4>
                 ))}
               </div>
             </div>
