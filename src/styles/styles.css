@@ -403,12 +403,14 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .movie .movieDetailsContainer .movieDetails .movieSpecs {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto auto auto;
+      grid-template-columns: auto auto auto auto auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  place-items: center;
   grid-gap: 10px;
   color: #d6d6d6;
   margin-bottom: 10px;
@@ -422,12 +424,16 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .movie .movieDetailsContainer .movieDetails .movieSpecs .genres {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   grid-gap: 5px;
+}
+
+.movie .movieDetailsContainer .movieDetails .movieSpecs h4 {
+  white-space: nowrap;
 }
 
 .movie .movieDetailsContainer .movieDetails .movieSpecs button {

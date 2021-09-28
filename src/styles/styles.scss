@@ -334,8 +334,10 @@ body::-webkit-scrollbar-thumb:hover {
         margin-bottom: 20px;
       }
       .movieSpecs {
-        display: flex;
-        align-items: center;
+        display: grid;
+        grid-template-columns: auto auto auto auto auto;
+        width: fit-content;
+        place-items: center;
         grid-gap: 10px;
         color: $text_grey;
         margin-bottom: 10px;
@@ -346,10 +348,12 @@ body::-webkit-scrollbar-thumb:hover {
           background-color: $text_grey;
         }
         .genres {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          overflow: hidden;
+          display: flex;
+          flex-wrap: wrap;
           grid-gap: 5px;
+        }
+        h4 {
+          white-space: nowrap;
         }
         button {
           padding: 10px 30px;
