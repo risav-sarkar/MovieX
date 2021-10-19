@@ -7,6 +7,7 @@ import Thumbnails from "./thumbnails";
 import Searchbar from "./searchbar";
 import Button from "./button";
 import noImage from "../styles/noImage.png";
+import { useEffect, useState } from "react";
 
 const Home = () => {
   const {
@@ -22,17 +23,33 @@ const Home = () => {
     setIsLoadingMoreMoviesUp,
   } = useHomeFetch();
 
+  const [slide, setSlide] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      slide === 5 ? setSlide(0) : setSlide(slide + 1);
+    }, 8000);
+    return () => clearInterval(interval);
+  }, [slide]);
+
   if (error) return <h1>Something Went Wrong</h1>;
 
   return (
     <>
-      {state.results[0] ? (
+      {state.results[slide] && !searchTerm ? (
+        <HeroImage
+          image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${state.results[slide].backdrop_path}`}
+          title={state.results[slide].original_title}
+          desc={state.results[slide].overview}
+        />
+      ) : state.results[0] && searchTerm ? (
         <HeroImage
           image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${state.results[0].backdrop_path}`}
           title={state.results[0].original_title}
           desc={state.results[0].overview}
         />
       ) : null}
+
       {!searchTerm ? (
         <div className="gridContainer">
           <div className="gridContent">

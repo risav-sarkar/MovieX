@@ -106,6 +106,8 @@ body::-webkit-scrollbar-thumb:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  animation: fadeINandOUT 8s ease-in-out 0s infinite forwards;
+
   img {
     height: 80vh;
     width: 100%;
@@ -116,6 +118,7 @@ body::-webkit-scrollbar-thumb:hover {
     position: absolute;
     max-width: $max_width;
     bottom: 60px;
+    animation: fadeINandOUTtext 8s ease-in-out 0s infinite forwards;
     h1 {
       font-size: 60px;
     }
@@ -566,5 +569,43 @@ body::-webkit-scrollbar-thumb:hover {
       font-weight: 600;
       color: $background3;
     }
+  }
+}
+
+@keyframes fadeINandOUT {
+  0% {
+    opacity: 0;
+    transform: translateY(-2%) scale(1.05);
+  }
+  20% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(2%) scale(1.05);
+  }
+}
+@keyframes fadeINandOUTtext {
+  0% {
+    opacity: 0;
+    transform: translateY(5%);
+  }
+
+  20% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-5%);
   }
 }
