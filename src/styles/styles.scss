@@ -106,7 +106,6 @@ body::-webkit-scrollbar-thumb:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  animation: fadeINandOUT 8s ease-in-out 0s infinite forwards;
 
   img {
     height: 80vh;
@@ -132,6 +131,10 @@ body::-webkit-scrollbar-thumb:hover {
       }
     }
   }
+}
+
+.animateslide {
+  animation: fadeINandOUT 8s ease-in-out 0s infinite forwards;
 }
 
 .gridContainer {

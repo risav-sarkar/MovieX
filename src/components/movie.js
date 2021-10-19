@@ -24,6 +24,7 @@ const Movie = () => {
               ? `${IMAGE_BASE_URL}${BACKDROP_SIZE}${state.backdrop_path}`
               : `${IMAGE_BASE_URL}${BACKDROP_SIZE}${state.poster_path}`
           }
+          animation={0}
         />
         <div className="movieDetailsContainer">
           <div className="blur"></div>

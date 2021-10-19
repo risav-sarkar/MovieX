@@ -134,8 +134,6 @@ body::-webkit-scrollbar-thumb:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-animation: fadeINandOUT 8s ease-in-out 0s infinite forwards;
-          animation: fadeINandOUT 8s ease-in-out 0s infinite forwards;
 }
 
 .heroSection img {
@@ -167,6 +165,11 @@ body::-webkit-scrollbar-thumb:hover {
   .heroSection .heroText h1 {
     font-size: 40px;
   }
+}
+
+.animateslide {
+  -webkit-animation: fadeINandOUT 8s ease-in-out 0s infinite forwards;
+          animation: fadeINandOUT 8s ease-in-out 0s infinite forwards;
 }
 
 .gridContainer {
