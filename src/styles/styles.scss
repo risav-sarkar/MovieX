@@ -580,11 +580,11 @@ body::-webkit-scrollbar-thumb:hover {
     opacity: 0;
     transform: translateY(-2%) scale(1.05);
   }
-  20% {
+  30% {
     transform: translateY(0) scale(1);
     opacity: 1;
   }
-  80% {
+  70% {
     opacity: 1;
     transform: translateY(0) scale(1);
   }
@@ -599,11 +599,11 @@ body::-webkit-scrollbar-thumb:hover {
     transform: translateY(5%);
   }
 
-  20% {
+  30% {
     transform: translateY(0);
     opacity: 1;
   }
-  80% {
+  70% {
     opacity: 1;
     transform: translateY(0);
   }
