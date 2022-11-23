@@ -10,7 +10,6 @@ import noImage from "../styles/noImage.png";
 const Movie = () => {
   const { movieId } = useParams();
   const { state, loading, error } = useMovieFetch(movieId);
-  console.log(state);
 
   if (loading) return <Spinner />;
   if (error) return <div>Something went wrong...</div>;

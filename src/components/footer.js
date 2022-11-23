@@ -17,19 +17,6 @@ const Footer = () => {
           <img className="logoImage" src={Tmdb} alt="tmdbLogo" />
         </div>
       </div>
-      <div className="name">
-        <p>
-          Made By{" "}
-          <a
-            href="http://risav-sarkar.github.io/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Risav
-          </a>{" "}
-          With ♡
-        </p>
-      </div>
     </div>
   );
 };
